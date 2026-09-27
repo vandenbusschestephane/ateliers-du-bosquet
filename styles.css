@@ -9,6 +9,8 @@
   --muted: #65736b;
   --line: #dce3d7;
   --sun: #e9b65e;
+  --plum: #77416f;
+  --orange: #df7d27;
 }
 
 * { box-sizing: border-box; }
@@ -79,9 +81,19 @@ main { overflow: hidden; }
 .section-heading h2, .section-heading > p:last-child { grid-column: 2; }
 h2 { margin: 0; font-size: clamp(2.4rem, 5vw, 4.5rem); letter-spacing: -.04em; }
 .section-heading > p:last-child { max-width: 680px; margin: 20px 0 0; color: var(--muted); font-size: 1.08rem; }
+.palette-intro { display: grid; grid-template-columns: 1.25fr .75fr; gap: 70px; align-items: center; margin-bottom: 50px; }
+.palette-intro h2 { max-width: 760px; margin-top: 14px; }
+.palette-intro > div > p:last-child { max-width: 680px; margin: 20px 0 0; color: var(--muted); font-size: 1.08rem; }
+.palette-image { display: block; width: min(340px, 100%); height: auto; margin: 0 auto; }
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .card { min-height: 320px; padding: 34px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: white; }
 .card.featured { background: var(--cream); }
+.axes-cards { grid-template-columns: repeat(3, 1fr); }
+.axis-card { min-height: 340px; border-top: 6px solid var(--forest); }
+.facilitation-card { border-top-color: var(--plum); }
+.formation-card { border-top-color: var(--orange); }
+.facilitation-card .card-number { color: var(--plum); }
+.formation-card .card-number { color: var(--orange); }
 .card-number { color: var(--forest); font-weight: 800; font-size: .78rem; }
 .card h3, .training-list h3, .resource-panel h3 { margin: 32px 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: 1.75rem; line-height: 1.2; }
 .card p { max-width: 470px; }
@@ -132,9 +144,10 @@ footer { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 32px 0;
   .brand small { display: none; }
   .hero { grid-template-columns: 1fr; padding-top: 58px; gap: 45px; }
   .hero h1 { font-size: clamp(3.1rem, 14vw, 5rem); }
-  .section-heading, .about, .circle-section { grid-template-columns: 1fr; gap: 26px; }
+  .section-heading, .palette-intro, .about, .circle-section { grid-template-columns: 1fr; gap: 26px; }
   .section-heading h2, .section-heading > p:last-child { grid-column: 1; }
-  .cards, .training-list { grid-template-columns: 1fr; }
+  .cards, .axes-cards, .training-list { grid-template-columns: 1fr; }
+  .palette-image { width: min(300px, 88vw); }
   .card { min-height: auto; }
   .resource-panel { align-items: flex-start; flex-direction: column; }
   footer { flex-direction: column; gap: 4px; }
