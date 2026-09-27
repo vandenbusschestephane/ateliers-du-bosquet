@@ -98,6 +98,12 @@ h2 { margin: 0; font-size: clamp(2.4rem, 5vw, 4.5rem); letter-spacing: -.04em; }
 
 .circle-section { padding: 95px max(20px, calc((100% - 1180px)/2)); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; color: white; background: var(--forest-deep); }
 .circle-section h2 { margin-top: 15px; color: var(--cream); }
+.circle-logo {
+  display: block;
+  width: min(280px, 100%);
+  height: auto;
+  margin-bottom: 28px;
+}
 .circle-copy { font-size: 1.1rem; }
 .light { color: var(--moss); }
 .text-link { font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 5px; }
