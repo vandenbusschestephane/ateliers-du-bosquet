@@ -284,6 +284,11 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 /* Navigation compacte sur ordinateur comme sur mobile. */
 .site-header { flex-wrap: nowrap; }
 .header-cta { margin-left: auto; white-space: nowrap; }
+.header-socials { display: flex; align-items: center; gap: 7px; margin-left: auto; }
+.header-socials a { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; color: var(--forest); background: var(--paper); transition: color .2s ease, background .2s ease, transform .2s ease; }
+.header-socials a:hover { color: white; background: var(--forest); transform: translateY(-2px); }
+.header-socials svg { width: 18px; height: 18px; fill: currentColor; }
+.header-socials + .header-cta { margin-left: 0; }
 .js .menu-toggle:not([hidden]) { display: block; margin-left: 0; }
 .js #navigation {
   position: absolute;
@@ -307,10 +312,14 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 .js #navigation a:hover { background: var(--cream); }
 .js #navigation .nav-cta { margin-top: 8px; text-align: center; }
 @media (max-width: 600px) {
-  .site-header { gap: 8px; }
-  .brand-logo { width: 135px; }
-  .header-cta { padding: 8px 12px; font-size: .82rem; }
-  .menu-toggle { padding: 8px 10px; font-size: .86rem; }
+  .site-header { gap: 6px; padding-left: 10px; padding-right: 10px; }
+  .brand-logo { width: 105px; }
+  .header-socials { gap: 3px; }
+  .header-socials a { width: 29px; height: 29px; }
+  .header-socials svg { width: 15px; height: 15px; }
+  .header-cta { padding: 7px 9px; font-size: .74rem; }
+  .menu-toggle { padding: 7px 9px; font-size: .9rem; line-height: 1; }
+  .menu-label { display: none; }
   .testimonials-heading { flex-direction: column; align-items: flex-start; }
   .testimonial-heading-actions { align-items: flex-start; }
   .testimonial-invite { text-align: left; }
