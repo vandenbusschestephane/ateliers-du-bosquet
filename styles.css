@@ -53,7 +53,7 @@ section, main { scroll-margin-top: 110px; }
 .brand small { margin-top: 4px; color: var(--muted); font-size: .75rem; }
 nav { display: flex; align-items: center; gap: 24px; }
 nav a { text-decoration: none; font-weight: 650; font-size: .92rem; }
-nav a[aria-current="page"] { color: var(--terracotta); font-weight: 850; }
+nav a[aria-current="page"] { color: var(--orange); font-weight: 850; }
 .nav-cta { padding: 9px 16px; border: 1px solid var(--forest); border-radius: 999px; }
 
 main { overflow: hidden; }
@@ -390,7 +390,13 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
   box-shadow: 0 18px 40px #19392c24;
 }
 .js #navigation.open { display: flex; }
+.nav-group { display: grid; gap: 2px; }
+.nav-group + .nav-group { margin-top: 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+.nav-group-title { padding: 4px 12px 7px; color: var(--forest); font-size: .72rem; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+.nav-group-personal .nav-group-title { color: var(--orange); }
 .js #navigation a { padding: 10px 12px; border-radius: 8px; }
+.js #navigation .nav-subitem { position: relative; margin-left: 12px; padding-top: 7px; padding-bottom: 7px; padding-left: 22px; color: var(--muted); font-size: .84rem; }
+.js #navigation .nav-subitem::before { content: ""; position: absolute; left: 8px; top: 50%; width: 7px; height: 1px; background: var(--orange); }
 .js #navigation a:hover { background: var(--cream); }
 .js #navigation .nav-cta { margin-top: 8px; text-align: center; }
 @media (max-width: 600px) {

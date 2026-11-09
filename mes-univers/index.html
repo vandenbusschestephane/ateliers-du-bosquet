@@ -22,8 +22,15 @@
     <a class="nav-cta header-cta" href="../#contact">Parlons-en</a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu" hidden><span aria-hidden="true">☰</span><span class="menu-label">Menu</span></button>
     <nav id="navigation" aria-label="Navigation principale">
-      <a href="../#accueil">Accueil</a><a href="../#prestations">Prestations</a><a href="../#demarche">Ma démarche</a>
-      <a href="../#cercle">Le Cercle</a><a href="../#ressources">Ressources</a><a href="#univers" aria-current="page">Mes univers</a><a href="../#tarifs">Tarifs</a>
+      <div class="nav-group" aria-labelledby="nav-bosquet">
+        <span class="nav-group-title" id="nav-bosquet">Les Ateliers du Bosquet</span>
+        <a href="../#accueil">Accueil</a><a href="../#prestations">Prestations</a><a href="../#demarche">Ma démarche</a><a href="../#cercle">Le Cercle</a><a href="../#ressources">Ressources</a><a href="../#tarifs">Tarifs</a>
+      </div>
+      <div class="nav-group nav-group-personal" aria-labelledby="nav-stephane">
+        <span class="nav-group-title" id="nav-stephane">Stéphane Vandenbussche</span>
+        <a href="#univers" aria-current="page">Mes univers</a>
+        <a class="nav-subitem" href="#artistique">Créations artistiques</a><a class="nav-subitem" href="#conferences">Conférences &amp; interventions</a><a class="nav-subitem" href="#reseau">Réseaux &amp; communautés</a>
+      </div>
     </nav>
   </header>
 
@@ -72,7 +79,7 @@
       <p class="univers-lead">Partager, expérimenter et faire vivre des moments collectifs.</p>
       <div class="conference-showcase">
         <div class="conference-video">
-          <video controls preload="metadata" playsinline poster="../images/conferences-supports-finis.jpg" aria-label="Vidéo des supports créés pour les ateliers">
+          <video class="conference-parts-video" controls preload="metadata" playsinline poster="../images/conferences-supports-finis.jpg" aria-label="Vidéo des supports créés pour les ateliers" data-parts="../videos/conferences-supports.mp4.part-00,../videos/conferences-supports.mp4.part-01,../videos/conferences-supports.mp4.part-02,../videos/conferences-supports.mp4.part-03,../videos/conferences-supports.mp4.part-04,../videos/conferences-supports.mp4.part-05,../videos/conferences-supports.mp4.part-06,../videos/conferences-supports.mp4.part-07,../videos/conferences-supports.mp4.part-08">
             <source src="../videos/conferences-supports.mp4" type="video/mp4">
             Votre navigateur ne permet pas de lire cette vidéo.
           </video>
@@ -139,6 +146,19 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { closeMenu(); toggle.focus(); } });
     document.addEventListener('click', e => { if (!e.target.closest('.site-header')) closeMenu(); });
     matchMedia('(min-width: 1051px)').addEventListener('change', closeMenu);
+
+    const partsVideo = document.querySelector('.conference-parts-video');
+    if (partsVideo?.dataset.parts) {
+      Promise.all(partsVideo.dataset.parts.split(',').map(part => fetch(part).then(response => {
+        if (!response.ok) throw new Error(`Chargement vidéo impossible : ${part}`);
+        return response.arrayBuffer();
+      }))).then(parts => {
+        const videoUrl = URL.createObjectURL(new Blob(parts, { type: 'video/mp4' }));
+        partsVideo.src = videoUrl;
+        partsVideo.load();
+        addEventListener('pagehide', () => URL.revokeObjectURL(videoUrl), { once: true });
+      }).catch(() => partsVideo.removeAttribute('data-parts'));
+    }
   </script>
 </body>
 </html>
