@@ -53,6 +53,7 @@ section, main { scroll-margin-top: 110px; }
 .brand small { margin-top: 4px; color: var(--muted); font-size: .75rem; }
 nav { display: flex; align-items: center; gap: 24px; }
 nav a { text-decoration: none; font-weight: 650; font-size: .92rem; }
+nav a[aria-current="page"] { color: var(--terracotta); font-weight: 850; }
 .nav-cta { padding: 9px 16px; border: 1px solid var(--forest); border-radius: 999px; }
 
 main { overflow: hidden; }
