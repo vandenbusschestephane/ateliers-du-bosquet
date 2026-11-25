@@ -14,8 +14,8 @@
     
     <nav class="universe-switcher" aria-label="Changer d’univers">
       <a class="universe-tab is-active" href="./" aria-label="Ateliers du Bosquet" title="Ateliers du Bosquet"><img src="images/logo-ateliers-du-bosquet.png" alt=""><span class="visually-hidden">Ateliers du Bosquet</span></a>
-      <a class="universe-tab" href="carnets-du-bosquet/" aria-label="Carnets du Bosquet" title="Carnets du Bosquet"><img src="images/onglet-carnets-cafe.jpg" alt=""><span class="visually-hidden">Carnets du Bosquet</span></a>
-      <a class="universe-tab" href="mes-univers/" aria-label="Stéphane Vandenbussche" title="Stéphane Vandenbussche"><img src="images/onglet-stephane-vdb.png" alt=""><span class="visually-hidden">Stéphane Vandenbussche</span></a>
+      <a class="universe-tab" href="carnets-du-bosquet/" aria-label="Carnets du Bosquet" title="Carnets du Bosquet"><img src="images/onglet-carnets-cafe.jpg?v=3" alt=""><span class="visually-hidden">Carnets du Bosquet</span></a>
+      <a class="universe-tab" href="mes-univers/" aria-label="Stéphane Vandenbussche" title="Stéphane Vandenbussche"><img src="images/onglet-stephane-vdb.png?v=3" alt=""><span class="visually-hidden">Stéphane Vandenbussche</span></a>
     </nav>
     <div class="header-socials" aria-label="Réseaux sociaux">
       <a href="https://www.linkedin.com/company/ateliers-du-bosquet/" target="_blank" rel="noopener" aria-label="Ateliers du Bosquet sur LinkedIn">
@@ -305,7 +305,7 @@
         const open = !nav.classList.contains('open');
         nav.classList.toggle('open', open);
         activeUniverseTab.setAttribute('aria-expanded', String(open));
-        nav.style.left = Math.max(0, activeUniverseTab.offsetLeft) + 'px';
+        nav.style.left = matchMedia('(max-width: 600px)').matches ? '10px' : Math.max(0, activeUniverseTab.offsetLeft) + 'px';
         nav.style.right = 'auto';
       });
     }
