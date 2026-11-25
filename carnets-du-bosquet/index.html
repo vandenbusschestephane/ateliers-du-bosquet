@@ -42,6 +42,14 @@
     <section class="carnets-gallery" id="galerie"><div class="section-heading"><p class="eyebrow">Galerie &amp; retours</p><h2>Quelques pages pour commencer.</h2><p>Les images des premiers ateliers arrivent ici, au fil des rencontres.</p></div><div class="gallery-grid"><figure class="gallery-large"><img src="../images/carnets-bosquet-banner.jpg" alt="Carnet de voyage et matériel de dessin sur une terrasse"></figure><figure><img src="../images/carnets-cafe-photo.jpg" alt="Participants réunis autour d'une fresque participative"></figure><div class="gallery-quote"><p>« Une manière joyeuse de regarder autrement ce qui nous entoure. »</p><span>Retour du premier Carnet Café</span></div></div></section>
   </main>
   <footer class="site-footer"><p>© Les Ateliers du Bosquet · Les Carnets du Bosquet</p><a href="../">Retour aux Ateliers du Bosquet</a></footer>
-  <script src="../script.js"></script>
+  <script>
+    const toggle=document.querySelector('.menu-toggle'), nav=document.querySelector('#navigation');
+    document.documentElement.classList.add('js'); toggle.hidden=false;
+    const closeMenu=()=>{toggle.setAttribute('aria-expanded','false');nav.classList.remove('open');};
+    toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);});
+    nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
+    document.querySelector('.header-cta').addEventListener('click',closeMenu);
+    document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))closeMenu();});
+  </script>
 </body>
 </html>
