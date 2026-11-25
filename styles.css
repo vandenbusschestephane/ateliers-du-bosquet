@@ -634,3 +634,22 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 @media (max-width: 600px) {
   .universe-tab { width: 96px; height: 68px; flex-basis: 96px; }
 }
+
+
+/* Onglets lisibles : format large sur ordinateur et mobile. */
+@media (min-width: 1051px) {
+  .universe-tab { width: 280px; height: 150px; flex-basis: 280px; }
+  .universe-switcher { gap: 16px; }
+}
+@media (max-width: 1050px) {
+  .universe-tab { width: 170px; height: 105px; flex-basis: 170px; }
+}
+@media (max-width: 600px) {
+  .universe-switcher { flex: 1 1 100%; order: 1; overflow-x: auto; }
+  .universe-tab { width: 132px; height: 86px; flex-basis: 132px; }
+  .header-socials { display: flex !important; order: 2; gap: 3px; margin-left: auto; }
+  .header-socials a { width: 28px; height: 28px; }
+  .header-socials svg { width: 14px; height: 14px; }
+  .header-cta { order: 2; }
+  .menu-toggle { display: none !important; }
+}
