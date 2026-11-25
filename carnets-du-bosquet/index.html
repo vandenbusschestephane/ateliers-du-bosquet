@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Les Carnets du Bosquet | Ateliers créatifs</title>
   <meta name="description" content="Les Carnets du Bosquet : s'initier au carnet de voyage, observer, dessiner et raconter ensemble.">
-  <link rel="stylesheet" href="../styles.css?v=20261125-univers2">
+  <link rel="stylesheet" href="../styles.css?v=20261125-univers3">
 </head>
 <body class="carnets-page">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -13,7 +13,7 @@
     
     <nav class="universe-switcher" aria-label="Changer d’univers">
       <a class="universe-tab" href="../"><img src="../images/logo-ateliers-du-bosquet.png" alt=""><span class="visually-hidden">Ateliers du Bosquet</span></a>
-      <a class="universe-tab is-active" href="./"><img src="../images/onglet-carnets-cafe.png../images/carnets-bosquet-banner.jpg" alt=""><span class="visually-hidden">Carnets du Bosquet</span></a>
+      <a class="universe-tab is-active" href="./"><img src="../images/onglet-carnets-cafe.jpg../images/carnets-bosquet-banner.jpg" alt=""><span class="visually-hidden">Carnets du Bosquet</span></a>
       <a class="universe-tab" href="../mes-univers/"><img src="../images/onglet-stephane-vdb.png" alt=""><span class="visually-hidden">Stéphane Vandenbussche</span></a>
     </nav>
     <div class="header-socials" aria-label="Réseaux sociaux">
@@ -51,6 +51,19 @@
     nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
     document.querySelector('.header-cta').addEventListener('click',closeMenu);
     document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))closeMenu();});
+  
+    const activeUniverseTab = document.querySelector('.universe-tab.is-active');
+    if (activeUniverseTab && nav) {
+      activeUniverseTab.setAttribute('aria-expanded', 'false');
+      activeUniverseTab.addEventListener('click', event => {
+        event.preventDefault();
+        const open = !nav.classList.contains('open');
+        nav.classList.toggle('open', open);
+        activeUniverseTab.setAttribute('aria-expanded', String(open));
+        nav.style.left = Math.max(0, activeUniverseTab.offsetLeft) + 'px';
+        nav.style.right = 'auto';
+      });
+    }
   </script>
 </body>
 </html>
