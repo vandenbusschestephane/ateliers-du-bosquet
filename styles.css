@@ -526,3 +526,39 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
   .universe-tab img { width: 38px; height: 38px; border-radius: 8px; }
   .menu-toggle { width: 34px; height: 34px; font-size: 1rem; }
 }
+
+
+/* En-tête par univers : les onglets remplacent le logo. */
+.site-header { gap: 18px; }
+.site-header > .brand { display: none; }
+.universe-switcher { flex: 1 1 auto; justify-content: flex-start; gap: 10px; margin-left: 0; }
+.universe-tab {
+  width: 112px;
+  height: 78px;
+  flex: 0 0 112px;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+.universe-tab img { width: 100%; height: 100%; border: 0; border-radius: 9px; object-fit: contain; }
+.universe-tab:nth-child(2) img, .universe-tab:nth-child(3) img { object-fit: cover; }
+.universe-tab.is-active { color: var(--forest); border: 2px solid var(--forest); background: var(--cream); box-shadow: 0 3px 0 var(--sun); }
+.universe-tab:hover { border-color: var(--forest); background: var(--cream); }
+.menu-toggle { width: 48px; height: 48px; display: grid; place-items: center; padding: 0; border-radius: 50%; font-size: 1.35rem; line-height: 1; }
+@media (max-width: 1050px) {
+  .site-header { gap: 8px; }
+  .universe-switcher { order: initial; flex: 1 1 auto; overflow-x: auto; padding: 0; }
+  .universe-tab { width: 82px; height: 62px; flex-basis: 82px; }
+  .header-socials { margin-left: auto; }
+}
+@media (max-width: 600px) {
+  .site-header { padding-left: 10px; padding-right: 10px; }
+  .universe-switcher { gap: 5px; }
+  .universe-tab { width: 72px; height: 54px; flex-basis: 72px; border-radius: 11px; }
+  .universe-tab img { border-radius: 7px; }
+  .header-socials { display: none; }
+  .header-cta { padding: 7px 9px; font-size: .74rem; }
+  .menu-toggle { width: 38px; height: 38px; font-size: 1.05rem; }
+}
