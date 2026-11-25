@@ -614,3 +614,9 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 
 
 .universe-tab::after { z-index: 3; }
+
+
+/* Le menu s’ouvre depuis l’onglet actif. */
+.menu-toggle { display: none !important; }
+.universe-tab.is-active { cursor: pointer; }
+.js #navigation.open { display: flex; }
