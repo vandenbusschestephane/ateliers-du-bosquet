@@ -625,3 +625,12 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 @media (max-width: 600px) {
   .js #navigation.open { left: 10px !important; right: auto !important; width: min(330px, calc(100vw - 20px)); }
 }
+
+
+/* Taille lisible sur ordinateur, compacte sur mobile. */
+@media (min-width: 1051px) {
+  .universe-tab { width: 190px; height: 118px; flex-basis: 190px; }
+}
+@media (max-width: 600px) {
+  .universe-tab { width: 96px; height: 68px; flex-basis: 96px; }
+}
