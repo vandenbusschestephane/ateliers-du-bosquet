@@ -620,3 +620,8 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 .menu-toggle { display: none !important; }
 .universe-tab.is-active { cursor: pointer; }
 .js #navigation.open { display: flex; }
+
+
+@media (max-width: 600px) {
+  .js #navigation.open { left: 10px !important; right: auto !important; width: min(330px, calc(100vw - 20px)); }
+}
