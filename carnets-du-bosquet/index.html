@@ -54,6 +54,7 @@
     nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
     document.querySelector('.header-cta').addEventListener('click',closeMenu);
     document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))closeMenu();});
+    document.querySelectorAll('.testimonials').forEach(section=>{const track=section.querySelector('.testimonial-track');const prev=section.querySelector('.testimonial-prev');const next=section.querySelector('.testimonial-next');if(track&&prev&&next){const step=()=>Math.min(track.clientWidth*.85,360);prev.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));next.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));}});
   
     const activeUniverseTab = document.querySelector('.universe-tab.is-active');
     if (activeUniverseTab && nav) {
