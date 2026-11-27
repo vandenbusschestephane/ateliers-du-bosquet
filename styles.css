@@ -722,3 +722,13 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 .offer-intro-copy { padding-top: 1.65rem; max-width: 760px; }
 .offer-intro-copy p { margin: 0 0 1rem; line-height: 1.6; }
 @media (max-width: 800px) { .offer-intro-copy { padding-top: 0; } }
+
+/* Harmonisation finale du Carnet Café */
+.carnets-concept-copy .section-heading { display:block; }
+.carnets-concept-copy .section-heading .eyebrow { text-align:left; }
+.carnets-offer .offer-intro-copy { font-family:inherit; font-size:1rem; color:#4d625c; }
+.carnets-universe-invitation { display:grid; grid-template-columns:.8fr 1.2fr; gap:4rem; align-items:start; padding:clamp(70px,9vw,115px) max(20px,calc((100% - 1180px)/2)); background:#dff2f0; }
+.carnets-universe-invitation h2 { margin:12px 0 0; max-width:620px; }
+.carnets-universe-invitation > div:last-child > p { max-width:650px; margin:0; color:#4d625c; font-size:1.08rem; }
+.universe-invitation-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+@media(max-width:700px){.carnets-universe-invitation{grid-template-columns:1fr;gap:1.5rem}}
