@@ -653,3 +653,9 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
   .header-cta { order: 2; }
   .menu-toggle { display: none !important; }
 }
+
+/* Menus des trois univers : style uniforme */
+.nav-group-carnets .nav-group-title,
+.nav-group-personal .nav-group-title,
+.js #navigation a[aria-current="page"] { color: var(--forest) !important; }
+.js #navigation .nav-subitem::before { background: var(--forest); }
