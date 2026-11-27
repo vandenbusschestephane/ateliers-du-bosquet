@@ -710,3 +710,5 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 .legal-note{grid-column:1/-1;margin:1.5rem 0 0;color:#65736b;font-size:.9rem}@media(max-width:700px){.places-description{grid-template-columns:1fr;gap:0}}
 
 @media(min-width:801px){.places-intro h2{white-space:nowrap;font-size:clamp(2.8rem,5vw,5rem)}}.audience-note{margin:0 0 2rem;color:#536b64;font-size:1rem}.carnets-offer .audience-note{max-width:760px}
+
+@media(min-width:801px){.places-intro{display:block}.places-intro h2{white-space:nowrap;font-size:clamp(2.4rem,4.2vw,4.4rem);width:100%;margin-bottom:2rem}.places-description{grid-template-columns:repeat(2,1fr)}}.carnets-offer .offer-intro p{margin:.65rem 0;max-width:760px}.carnets-offer .kit-callout{margin-top:2.2rem}
