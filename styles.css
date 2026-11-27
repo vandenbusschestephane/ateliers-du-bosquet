@@ -712,3 +712,13 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 @media(min-width:801px){.places-intro h2{white-space:nowrap;font-size:clamp(2.8rem,5vw,5rem)}}.audience-note{margin:0 0 2rem;color:#536b64;font-size:1rem}.carnets-offer .audience-note{max-width:760px}
 
 @media(min-width:801px){.places-intro{display:block}.places-intro h2{white-space:nowrap;font-size:clamp(2.4rem,4.2vw,4.4rem);width:100%;margin-bottom:2rem}.places-description{grid-template-columns:repeat(2,1fr)}}.carnets-offer .offer-intro p{margin:.65rem 0;max-width:760px}.carnets-offer .kit-callout{margin-top:2.2rem}
+
+/* Derniers ajustements de hiérarchie */
+@media (min-width: 801px) {
+  .places-intro .section-heading { margin-bottom: 1.2rem; }
+  .places-intro h2 { white-space: nowrap; width: max-content; max-width: none; font-size: clamp(1.8rem, 3.45vw, 3.8rem); letter-spacing: -.055em; }
+}
+.offer-intro-heading h2 { margin: 0; }
+.offer-intro-copy { padding-top: 1.65rem; max-width: 760px; }
+.offer-intro-copy p { margin: 0 0 1rem; line-height: 1.6; }
+@media (max-width: 800px) { .offer-intro-copy { padding-top: 0; } }
