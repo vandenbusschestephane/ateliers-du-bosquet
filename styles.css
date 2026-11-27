@@ -738,3 +738,7 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 .carnets-concept-copy .section-heading > h2,
 .carnets-concept-copy .section-heading > p:last-child { text-align:left; margin-left:0; margin-right:0; }
 .carnets-offer .offer-intro-copy { font-size:1rem; line-height:1.65; }
+
+/* Dernière harmonisation des textes et des liens */
+.carnets-offer .offer-intro-copy p { font-size:1rem !important; line-height:1.65; }
+.carnets-offer .offer-intro-copy p + p { margin-top:1rem; }
