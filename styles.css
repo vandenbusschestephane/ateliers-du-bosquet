@@ -742,3 +742,8 @@ blockquote { margin: 0; font-family: Georgia,serif; font-size: 1.2rem; line-heig
 /* Dernière harmonisation des textes et des liens */
 .carnets-offer .offer-intro-copy p { font-size:1rem !important; line-height:1.65; }
 .carnets-offer .offer-intro-copy p + p { margin-top:1rem; }
+
+/* Navigation précise et liens en paragraphe */
+#intentions-title,#process-title,#session-title,#a-propos { scroll-margin-top: 135px; }
+.about-links { margin: 28px 0 0; color: var(--muted); font-size:1.08rem; }
+.about-links .text-link { color: var(--forest); font-weight:750; }
